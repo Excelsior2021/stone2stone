@@ -1,0 +1,29 @@
+@use "../../partials/mixins.scss" as *;
+
+.header {
+  background-color: #fff;
+
+  @include media-desktop {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1480px;
+
+    height: 116px;
+
+    @include media-desktop {
+      justify-content: left;
+      padding: 0 32px;
+    }
+  }
+
+  &__logo {
+    display: block;
+  }
+}

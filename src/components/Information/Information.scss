@@ -1,0 +1,77 @@
+@use "../../partials/variables" as *;
+@use "../../partials/mixins" as *;
+
+.information {
+  color: #fff;
+
+  @include media-desktop {
+    width: 50%;
+    max-width: 650px;
+  }
+
+  &__container {
+    padding: 72px 32px 58px 32px;
+    background-color: $dark-blue;
+
+    @include media-desktop {
+      background-color: transparent;
+      padding: 0;
+    }
+  }
+
+  &__block {
+    border-bottom: 2px solid #fff;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__heading {
+    font-family: "Roboto Slab";
+    margin: $info-margin-mobile 0;
+
+    @include media-desktop {
+      font-size: 3.5rem;
+      margin: $info-margin-desktop 0;
+    }
+
+    &--no-margin {
+      margin: 0;
+    }
+  }
+
+  &__date,
+  &__text {
+    margin-bottom: $info-margin-mobile;
+
+    @include media-desktop {
+      margin-bottom: $info-margin-desktop;
+    }
+  }
+
+  &__date {
+    font-family: "Roboto Slab";
+    font-weight: bold;
+
+    @include media-desktop {
+      font-size: 2.8rem;
+    }
+  }
+
+  &__text {
+    @include media-desktop {
+      font-size: 2rem;
+    }
+
+    &--bold {
+      font-weight: bold;
+    }
+  }
+}
+
+.list {
+  letter-spacing: 1px;
+  margin-bottom: $info-margin-mobile;
+  padding: 0 20px;
+}

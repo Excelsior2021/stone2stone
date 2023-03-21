@@ -1,0 +1,110 @@
+@use "../../partials/variables" as *;
+@use "../../partials/mixins" as *;
+
+%form-elements {
+  border-radius: 10px;
+  padding: 1.2rem;
+
+  @include media-desktop {
+    padding: 1.8rem;
+  }
+}
+
+.form {
+  background-color: #fff;
+
+  @include media-desktop {
+    width: 50%;
+    // height: 805px;
+    max-width: 650px;
+    border-radius: 10px;
+  }
+
+  &__heading-container {
+    font-family: "Roboto Slab";
+    font-size: 2rem;
+    font-weight: bold;
+    background: $light-grey;
+    padding: 32px;
+
+    @include media-desktop {
+      flex: 1;
+      font-size: 3.5rem;
+      max-width: 650px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      padding: 48px;
+    }
+  }
+
+  &__form {
+    padding: 52px 32px;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__section {
+    @include media-desktop {
+      display: flex;
+      justify-content: space-between;
+      column-gap: 36px;
+    }
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+
+    @include media-desktop {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+
+  &__label {
+    text-transform: capitalize;
+    font-size: 2rem;
+    margin-bottom: 12px;
+  }
+
+  &__input {
+    @extend %form-elements;
+    font-size: 2rem;
+    outline: none;
+    border: 1px solid #000;
+    margin-bottom: 24px;
+
+    @include media-desktop {
+      margin-bottom: 32px;
+      width: 100%;
+    }
+  }
+
+  &__button {
+    @extend %form-elements;
+    text-transform: capitalize;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: $orange;
+    margin-top: 32px;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #fc8f3c;
+    }
+
+    @include media-desktop {
+      margin-top: 0;
+      padding: 1.5rem;
+    }
+  }
+
+  &__invalid {
+    color: red;
+    margin: 8px 0;
+  }
+}
